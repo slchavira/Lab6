@@ -63,37 +63,42 @@ def main():
 
     while not file_found:
 
-    try:
-        # Open the file and read its contents.
-        infile = open('gradees.txt', 'r')
+        try:
+            # Open the file and read its contents.
+            print('before input file')
+            infile = open('gradees.txt', 'r')
+            print('test')
 
-        # Read in first line from file.
-        name = infile.readline()
-
-        # If a field was read continue processing file.
-        while name != '':
-            # Read the next line which would be the student's grade.
-            grade = infile.readline()
-
-            # Strip the \n from name and grade
-            name = name.rstrip('\n')
-            grade = grade.rstrip('\n')
-
-            # Display the contents.
-            print('Name: ' + name)
-            print('Grade: ' + grade)
-            print()
-
-            # Read the next name field for the next record.
+            """
+            # Read in first line from file.
             name = infile.readline()
+        
+            # If a field was read continue processing file.
+            while name != '':
+                # Read the next line which would be the student's grade.
+                grade = infile.readline()
+        
+                # Strip the \n from name and grade
+                name = name.rstrip('\n')
+                grade = grade.rstrip('\n')
+        
+                # Display the contents.
+                print('Name: ' + name)
+                print('Grade: ' + grade)
+                print()
+        
+                # Read the next name field for the next record.
+                name = infile.readline()
+            """
 
-        # Close the file.
-        infile.close()
 
-    except FileNotFoundError:
-        print('File not found')
-        correct_filename = input('What is the correct file name? ')
-        infile = open(correct_filename, 'r')
+            # Close the file.
+            infile.close()
+
+        except FileNotFoundError:
+            print('File not found')
+            correct_filename = input('What is the correct file name? ')
+            #infile = open(correct_filename, 'r')
 
 
 
