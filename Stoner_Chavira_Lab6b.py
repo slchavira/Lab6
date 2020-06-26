@@ -1,6 +1,7 @@
 # This program will create a record of 12 students' average grades
 # and record them to file grades.txt. It will then open the file and
 # display all records.
+# Test commit
 
 def main():
 
@@ -18,7 +19,6 @@ def main():
             name = input('Name: ')
             avg_grade = int(input('Grade: '))
 
-
             # Write data to grades.txt if 100 <= avg_grade >= 0
             if avg_grade <= 100 and avg_grade >= 0:
                 grades_file.write(name + '\n')
@@ -33,7 +33,6 @@ def main():
                       '0 or above 100.\n')
         except ValueError:
             print('You must enter a number.\n')
-
 
     # Close the file.
     grades_file.close()
@@ -53,24 +52,23 @@ def main():
 
             # Read in first line from file.
             name = infile.readline()
-        
+
             # If a field was read continue processing file.
             while name != '':
                 # Read the next line which would be the student's grade.
                 grade = infile.readline()
-        
+
                 # Strip the \n from name and grade
                 name = name.rstrip('\n')
                 grade = grade.rstrip('\n')
-        
+
                 # Display the contents.
                 print('Name: ' + name)
                 print('Grade: ' + grade)
                 print()
-        
+
                 # Read the next name field for the next record.
                 name = infile.readline()
-
 
             # Close the file.
             infile.close()
