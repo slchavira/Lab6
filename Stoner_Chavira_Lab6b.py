@@ -1,27 +1,11 @@
-"""
-Write a program for Professor Polanco at Austin Community College that allows him
-to keep a record of the students average grade in his class. The program must be
-written in accordance with the following specs:
-
-1. The input must be interactive from the keyboard. You will take input for 12 students.
-2. You will input the students' name and an average grade. The student cannot enter
-an average below zero or above 100. Your program must raise and handle an
-exception should this occur. (LO 5)
-a. The exception should cause the program to return and get a new grade
-3. Write all output to a file named grades.txt (LO 1, 3, 4)
-4. Close the output file. (LO 3, 4)
-5. Open the file grades.txt for input. (LO 2)
-6. Your program will raise and handle an exception if the file is not found. (LO 5)
-a. I will test this aspect by changing the file name and looking for your exception
-code (your exception should cause program to ask for correct file name).
-7. Read all the records from the file and display them. (LO 2)
-"""
-
+# This program will create a record of 12 students' average grades
+# and record them to file grades.txt. It will then open the file and
+# display all records.
 
 def main():
 
     # Counter for students
-    students = 3
+    students = 12
     counter = 0
 
     # Open file to write to.
@@ -33,6 +17,7 @@ def main():
             print('Enter info for student #', counter + 1)
             name = input('Name: ')
             avg_grade = int(input('Grade: '))
+
 
             # Write data to grades.txt if 100 <= avg_grade >= 0
             if avg_grade <= 100 and avg_grade >= 0:
@@ -49,22 +34,23 @@ def main():
         except ValueError:
             print('You must enter a number.\n')
 
+
     # Close the file.
     grades_file.close()
     print('Data has been written to grades.txt.\n')
 
     file_found = False
 
+    filename = 'grades.txt'
+
     while not file_found:
 
         try:
             # Open the file and read its contents.
-            # test
-            print('before input file')
-            infile = open('gradees.txt', 'r')
-            print('test')
+            infile = open(filename, 'r')
+
             file_found = True
-            """
+
             # Read in first line from file.
             name = infile.readline()
         
@@ -84,7 +70,7 @@ def main():
         
                 # Read the next name field for the next record.
                 name = infile.readline()
-            """
+
 
             # Close the file.
             infile.close()
@@ -92,7 +78,7 @@ def main():
         except FileNotFoundError:
             print('File not found')
             correct_filename = input('What is the correct file name? ')
-            #infile = open(correct_filename, 'r')
+            filename = correct_filename
 
 
 # Call the main function.
