@@ -1,10 +1,10 @@
 """
 Write a program for Professor Polanco at Austin Community College that allows him
-to keep a record of the students’ average grade in his class. The program must be
+to keep a record of the students average grade in his class. The program must be
 written in accordance with the following specs:
 
 1. The input must be interactive from the keyboard. You will take input for 12 students.
-2. You will input the students’ name and an average grade. The student cannot enter
+2. You will input the students' name and an average grade. The student cannot enter
 an average below zero or above 100. Your program must raise and handle an
 exception should this occur. (LO 5)
 a. The exception should cause the program to return and get a new grade
@@ -17,10 +17,6 @@ code (your exception should cause program to ask for correct file name).
 7. Read all the records from the file and display them. (LO 2)
 """
 
-
-# This program will create a record of 12 students' average grades
-# and record them to file grades.txt. It will then open the file and
-# display all records.
 
 def main():
 
@@ -38,7 +34,6 @@ def main():
             name = input('Name: ')
             avg_grade = int(input('Grade: '))
 
-
             # Write data to grades.txt if 100 <= avg_grade >= 0
             if avg_grade <= 100 and avg_grade >= 0:
                 grades_file.write(name + '\n')
@@ -54,7 +49,6 @@ def main():
         except ValueError:
             print('You must enter a number.\n')
 
-
     # Close the file.
     grades_file.close()
     print('Data has been written to grades.txt.\n')
@@ -65,6 +59,7 @@ def main():
 
         try:
             # Open the file and read its contents.
+            # test
             print('before input file')
             infile = open('gradees.txt', 'r')
             print('test')
@@ -91,7 +86,6 @@ def main():
                 name = infile.readline()
             """
 
-
             # Close the file.
             infile.close()
 
@@ -99,11 +93,6 @@ def main():
             print('File not found')
             correct_filename = input('What is the correct file name? ')
             #infile = open(correct_filename, 'r')
-
-
-
-
-
 
 
 # Call the main function.
