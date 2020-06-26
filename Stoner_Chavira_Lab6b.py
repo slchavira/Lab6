@@ -68,7 +68,7 @@ def main():
             print('before input file')
             infile = open('gradees.txt', 'r')
             print('test')
-
+            file_found = True
             """
             # Read in first line from file.
             name = infile.readline()
